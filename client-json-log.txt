@@ -1,0 +1,271 @@
+Request #1: GET /person Accept: application/json
+
+=> RESULT: OK
+=> HTTP Status: 200
+
+{
+  "person" : [ {
+    "firstname" : "Jhon0",
+    "lastname" : "Doe0",
+    "birthdate" : "1990-01-01",
+    "id" : 1,
+    "activity" : [ {
+      "name" : "Activity0",
+      "description" : "Description 0",
+      "place" : "Trento",
+      "startdate" : "2016-01-02",
+      "id" : 2,
+      "type" : "Sport"
+    }, {
+      "name" : "Activity5",
+      "description" : "Description 5",
+      "place" : "Trento",
+      "startdate" : "2016-06-07",
+      "id" : 3,
+      "type" : "Sport"
+    } ]
+  }, {
+    "firstname" : "Jhon1",
+    "lastname" : "Doe1",
+    "birthdate" : "1991-02-02",
+    "id" : 4,
+    "activity" : [ {
+      "name" : "Activity1",
+      "description" : "Description 1",
+      "place" : "Trento",
+      "startdate" : "2016-02-03",
+      "id" : 5,
+      "type" : "Social"
+    }, {
+      "name" : "Activity7",
+      "description" : "Description 7",
+      "place" : "Trento",
+      "startdate" : "2016-08-09",
+      "id" : 6,
+      "type" : "Multimedia"
+    } ]
+  }, {
+    "firstname" : "Jhon2",
+    "lastname" : "Doe2",
+    "birthdate" : "1992-03-03",
+    "id" : 7,
+    "activity" : [ {
+      "name" : "Activity2",
+      "description" : "Description 2",
+      "place" : "Trento",
+      "startdate" : "2016-03-04",
+      "id" : 8,
+      "type" : "Multimedia"
+    }, {
+      "name" : "Activity7",
+      "description" : "Description 7",
+      "place" : "Trento",
+      "startdate" : "2016-08-09",
+      "id" : 9,
+      "type" : "Multimedia"
+    } ]
+  }, {
+    "firstname" : "Jhon3",
+    "lastname" : "Doe3",
+    "birthdate" : "1993-04-04",
+    "id" : 10,
+    "activity" : [ {
+      "name" : "Activity3",
+      "description" : "Description 3",
+      "place" : "Trento",
+      "startdate" : "2016-04-05",
+      "id" : 11,
+      "type" : "Work"
+    }, {
+      "name" : "Activity9",
+      "description" : "Description 9",
+      "place" : "Trento",
+      "startdate" : "2016-10-11",
+      "id" : 12,
+      "type" : "Fun"
+    } ]
+  }, {
+    "firstname" : "Jhon4",
+    "lastname" : "Doe4",
+    "birthdate" : "1994-05-05",
+    "id" : 13,
+    "activity" : [ {
+      "name" : "Activity4",
+      "description" : "Description 4",
+      "place" : "Trento",
+      "startdate" : "2016-05-06",
+      "id" : 14,
+      "type" : "Fun"
+    }, {
+      "name" : "Activity9",
+      "description" : "Description 9",
+      "place" : "Trento",
+      "startdate" : "2016-10-11",
+      "id" : 15,
+      "type" : "Fun"
+    } ]
+  } ]
+}
+
+Request #2: GET /person/1 Accept: application/json
+
+=> RESULT: OK
+=> HTTP Status: 200
+
+{
+  "firstname" : "Jhon0",
+  "lastname" : "Doe0",
+  "birthdate" : "1990-01-01",
+  "id" : 1,
+  "activity" : [ {
+    "name" : "Activity0",
+    "description" : "Description 0",
+    "place" : "Trento",
+    "startdate" : "2016-01-02",
+    "id" : 2,
+    "type" : "Sport"
+  }, {
+    "name" : "Activity5",
+    "description" : "Description 5",
+    "place" : "Trento",
+    "startdate" : "2016-06-07",
+    "id" : 3,
+    "type" : "Sport"
+  } ]
+}
+
+Request #3: PUT /person/1 Accept: application/json Content-Type: application/json
+
+=> RESULT: OK
+=> HTTP Status: 200
+
+{
+  "firstname" : "NewNameapplication/json",
+  "lastname" : "Doe0",
+  "birthdate" : "1990-01-01",
+  "id" : 1,
+  "activity" : [ {
+    "name" : "Activity0",
+    "description" : "Description 0",
+    "place" : "Trento",
+    "startdate" : "2016-01-02",
+    "id" : 2,
+    "type" : "Sport"
+  }, {
+    "name" : "Activity5",
+    "description" : "Description 5",
+    "place" : "Trento",
+    "startdate" : "2016-06-07",
+    "id" : 3,
+    "type" : "Sport"
+  } ]
+}
+
+Request #4: POST /person Accept: application/json Content-Type: application/json
+
+=> RESULT: OK
+=> HTTP Status: 201
+
+{
+  "firstname" : "ClientName",
+  "lastname" : "ClientLastname",
+  "birthdate" : "2017-12-12",
+  "id" : 16,
+  "activity" : [ ]
+}
+
+Request #5: DELETE /person/16 Accept: application/json Content-Type: application/json
+
+=> RESULT: OK
+=> HTTP Status: 404
+
+Request #6: GET /activity_types Accept: application/json
+
+=> RESULT: OK
+=> HTTP Status: 200
+
+{
+  "activity_type" : [ "Sport", "Social", "Multimedia", "Work", "Fun" ]
+}
+
+Request #7: GET /person/1/Sport Accept: application/json
+
+=> RESULT: OK
+=> HTTP Status: 200
+
+{
+  "activity" : [ {
+    "name" : "Activity0",
+    "description" : "Description 0",
+    "place" : "Trento",
+    "startdate" : "2016-01-02",
+    "id" : 2,
+    "type" : "Sport"
+  }, {
+    "name" : "Activity5",
+    "description" : "Description 5",
+    "place" : "Trento",
+    "startdate" : "2016-06-07",
+    "id" : 3,
+    "type" : "Sport"
+  } ]
+}
+
+Request #8: GET /person/1/Sport/2 Accept: application/json
+
+=> RESULT: OK
+=> HTTP Status: 200
+
+{
+  "name" : "Activity0",
+  "description" : "Description 0",
+  "place" : "Trento",
+  "startdate" : "2016-01-02",
+  "id" : 2,
+  "type" : "Sport"
+}
+
+Request #9: POST /person/1/Sport Accept: application/json Content-Type: application/json
+
+=> RESULT: OK
+=> HTTP Status: 200
+
+{
+  "name" : "Client_application/json",
+  "description" : "Description application/json",
+  "place" : "Client",
+  "startdate" : "2017-12-12",
+  "id" : 17,
+  "type" : "Sport"
+}
+
+Request #10: PUT /person/1/Social/17 Accept: application/json
+
+=> RESULT: OK
+=> HTTP Status: 200
+
+{
+  "name" : "Client_application/json",
+  "description" : "Description application/json",
+  "place" : "Client",
+  "startdate" : "2017-12-12",
+  "id" : 17,
+  "type" : "Social"
+}
+
+Request #11: GET /person/1/Social Accept: application/json
+
+=> RESULT: OK
+=> HTTP Status: 200
+
+{
+  "activity" : [ {
+    "name" : "Client_application/json",
+    "description" : "Description application/json",
+    "place" : "Client",
+    "startdate" : "2017-12-12",
+    "id" : 17,
+    "type" : "Social"
+  } ]
+}
+

@@ -1,0 +1,283 @@
+Request #1: GET /person Accept: application/xml
+
+=> RESULT: OK
+=> HTTP Status: 200
+
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<people>
+    <person id="4">
+        <firstname>Jhon1</firstname>
+        <lastname>Doe1</lastname>
+        <birthdate>1991-02-02T16:41:54.023+01:00</birthdate>
+        <activitypreference>
+            <activity id="5">
+                <name>Activity1</name>
+                <description>Description 1</description>
+                <place>Trento</place>
+                <type>Social</type>
+                <startdate>2016-02-03T10:31:54.026+01:00</startdate>
+            </activity>
+            <activity id="6">
+                <name>Activity7</name>
+                <description>Description 7</description>
+                <place>Trento</place>
+                <type>Multimedia</type>
+                <startdate>2016-08-09T17:37:54.030+02:00</startdate>
+            </activity>
+        </activitypreference>
+    </person>
+    <person id="7">
+        <firstname>Jhon2</firstname>
+        <lastname>Doe2</lastname>
+        <birthdate>1992-03-03T16:41:54.051+01:00</birthdate>
+        <activitypreference>
+            <activity id="8">
+                <name>Activity2</name>
+                <description>Description 2</description>
+                <place>Trento</place>
+                <type>Multimedia</type>
+                <startdate>2016-03-04T11:32:54.054+01:00</startdate>
+            </activity>
+            <activity id="9">
+                <name>Activity7</name>
+                <description>Description 7</description>
+                <place>Trento</place>
+                <type>Multimedia</type>
+                <startdate>2016-08-09T17:37:54.059+02:00</startdate>
+            </activity>
+        </activitypreference>
+    </person>
+    <person id="10">
+        <firstname>Jhon3</firstname>
+        <lastname>Doe3</lastname>
+        <birthdate>1993-04-04T17:41:54.082+02:00</birthdate>
+        <activitypreference>
+            <activity id="11">
+                <name>Activity3</name>
+                <description>Description 3</description>
+                <place>Trento</place>
+                <type>Work</type>
+                <startdate>2016-04-05T13:33:54.085+02:00</startdate>
+            </activity>
+            <activity id="12">
+                <name>Activity9</name>
+                <description>Description 9</description>
+                <place>Trento</place>
+                <type>Fun</type>
+                <startdate>2016-10-11T19:39:54.090+02:00</startdate>
+            </activity>
+        </activitypreference>
+    </person>
+    <person id="13">
+        <firstname>Jhon4</firstname>
+        <lastname>Doe4</lastname>
+        <birthdate>1994-05-05T17:41:54.111+02:00</birthdate>
+        <activitypreference>
+            <activity id="14">
+                <name>Activity4</name>
+                <description>Description 4</description>
+                <place>Trento</place>
+                <type>Fun</type>
+                <startdate>2016-05-06T14:34:54.114+02:00</startdate>
+            </activity>
+            <activity id="15">
+                <name>Activity9</name>
+                <description>Description 9</description>
+                <place>Trento</place>
+                <type>Fun</type>
+                <startdate>2016-10-11T19:39:54.118+02:00</startdate>
+            </activity>
+        </activitypreference>
+    </person>
+    <person id="1">
+        <firstname>NewNameapplication/json</firstname>
+        <lastname>Doe0</lastname>
+        <birthdate>1990-01-01T01:00:00+01:00</birthdate>
+        <activitypreference>
+            <activity id="2">
+                <name>Activity0</name>
+                <description>Description 0</description>
+                <place>Trento</place>
+                <type>Sport</type>
+                <startdate>2016-01-02T09:30:53.953+01:00</startdate>
+            </activity>
+            <activity id="3">
+                <name>Activity5</name>
+                <description>Description 5</description>
+                <place>Trento</place>
+                <type>Sport</type>
+                <startdate>2016-06-07T15:35:53.959+02:00</startdate>
+            </activity>
+            <activity id="17">
+                <name>Client_application/json</name>
+                <description>Description application/json</description>
+                <place>Client</place>
+                <type>Social</type>
+                <startdate>2017-12-12T01:00:00+01:00</startdate>
+            </activity>
+        </activitypreference>
+    </person>
+</people>
+
+Request #2: GET /person/4 Accept: application/xml
+
+=> RESULT: OK
+=> HTTP Status: 200
+
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<person id="4">
+    <firstname>Jhon1</firstname>
+    <lastname>Doe1</lastname>
+    <birthdate>1991-02-02T16:41:54.023+01:00</birthdate>
+    <activitypreference>
+        <activity id="5">
+            <name>Activity1</name>
+            <description>Description 1</description>
+            <place>Trento</place>
+            <type>Social</type>
+            <startdate>2016-02-03T10:31:54.026+01:00</startdate>
+        </activity>
+        <activity id="6">
+            <name>Activity7</name>
+            <description>Description 7</description>
+            <place>Trento</place>
+            <type>Multimedia</type>
+            <startdate>2016-08-09T17:37:54.030+02:00</startdate>
+        </activity>
+    </activitypreference>
+</person>
+
+Request #3: PUT /person/4 Accept: application/xml Content-Type: application/xml
+
+=> RESULT: OK
+=> HTTP Status: 200
+
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<person id="4">
+    <firstname>NewNameapplication/xml</firstname>
+    <lastname>Doe1</lastname>
+    <birthdate>1991-02-02T16:41:54.023+01:00</birthdate>
+    <activitypreference>
+        <activity id="5">
+            <name>Activity1</name>
+            <description>Description 1</description>
+            <place>Trento</place>
+            <type>Social</type>
+            <startdate>2016-02-03T10:31:54.026+01:00</startdate>
+        </activity>
+        <activity id="6">
+            <name>Activity7</name>
+            <description>Description 7</description>
+            <place>Trento</place>
+            <type>Multimedia</type>
+            <startdate>2016-08-09T17:37:54.030+02:00</startdate>
+        </activity>
+    </activitypreference>
+</person>
+
+Request #4: POST /person Accept: application/xml Content-Type: application/xml
+
+=> RESULT: OK
+=> HTTP Status: 201
+
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<person id="18">
+    <firstname>ClientName</firstname>
+    <lastname>ClientLastname</lastname>
+    <birthdate>2017-12-12T16:47:47.470+01:00</birthdate>
+    <activitypreference/>
+</person>
+
+Request #5: DELETE /person/18 Accept: application/xml Content-Type: application/xml
+
+=> RESULT: OK
+=> HTTP Status: 404
+
+Request #6: GET /activity_types Accept: application/xml
+
+=> RESULT: OK
+=> HTTP Status: 200
+
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<activityTypes>
+    <activity_type>Sport</activity_type>
+    <activity_type>Social</activity_type>
+    <activity_type>Multimedia</activity_type>
+    <activity_type>Work</activity_type>
+    <activity_type>Fun</activity_type>
+</activityTypes>
+
+Request #7: GET /person/4/Social Accept: application/xml
+
+=> RESULT: OK
+=> HTTP Status: 200
+
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<activities>
+    <activity id="5">
+        <name>Activity1</name>
+        <description>Description 1</description>
+        <place>Trento</place>
+        <type>Social</type>
+        <startdate>2016-02-03T10:31:54.026+01:00</startdate>
+    </activity>
+</activities>
+
+Request #8: GET /person/4/Social/5 Accept: application/xml
+
+=> RESULT: OK
+=> HTTP Status: 200
+
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<activity id="5">
+    <name>Activity1</name>
+    <description>Description 1</description>
+    <place>Trento</place>
+    <type>Social</type>
+    <startdate>2016-02-03T10:31:54.026+01:00</startdate>
+</activity>
+
+Request #9: POST /person/4/Sport Accept: application/xml Content-Type: application/xml
+
+=> RESULT: OK
+=> HTTP Status: 200
+
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<activity id="19">
+    <name>Client_application/xml</name>
+    <description>Description application/xml</description>
+    <place>Client</place>
+    <type>Sport</type>
+    <startdate>2017-12-12T16:47:48.705+01:00</startdate>
+</activity>
+
+Request #10: PUT /person/4/Social/19 Accept: application/xml
+
+=> RESULT: OK
+=> HTTP Status: 200
+
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<activity id="19">
+    <name>Client_application/xml</name>
+    <description>Description application/xml</description>
+    <place>Client</place>
+    <type>Social</type>
+    <startdate>2017-12-12T16:47:48.705+01:00</startdate>
+</activity>
+
+Request #11: GET /person/4/Social Accept: application/xml
+
+=> RESULT: OK
+=> HTTP Status: 200
+
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<activities>
+    <activity id="19">
+        <name>Client_application/xml</name>
+        <description>Description application/xml</description>
+        <place>Client</place>
+        <type>Social</type>
+        <startdate>2017-12-12T16:47:48.705+01:00</startdate>
+    </activity>
+</activities>
+
