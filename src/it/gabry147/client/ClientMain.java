@@ -25,19 +25,25 @@ public class ClientMain {
 	private void executeRequest(String type) throws JsonProcessingException, JAXBException, FileNotFoundException {
 		// REQUEST 1
 		People people = s.request_01(type);
-		System.out.println(Print.printPeople(people, type));
+		String str = Print.printPeople(people, type);
+		System.out.println(s);
+		s.out.println(s);
 		// save person ids
 		s.first_person_id = people.getPersonList().get(0).getId();
 		s.last_person_id = people.getPersonList().get(people.getPersonList().size()-1).getId();
 		
 		// REQUEST 2
 		Person firstPerson = s.request_02(type);
-		System.out.println(Print.printPerson(firstPerson, type));
+		str = Print.printPerson(firstPerson, type);
+		System.out.println(str);
+		s.out.println(str);
 		
 		// REQUEST 3
 		firstPerson.setFirstname("NewName"+type);
 		Person newFirstPerson = s.request_03(firstPerson, type);
-		System.out.println(Print.printPerson(newFirstPerson, type));
+		str = Print.printPerson(newFirstPerson, type);
+		System.out.println(str);
+		s.out.println(str);
 		
 		// REQUEST 4
 		//create person and activity
@@ -56,7 +62,9 @@ public class ClientMain {
 		toCreate.setActivitypreference(activityList);
 		//perform request
         Person createdPerson = s.request_04(toCreate, type);
-        System.out.println(Print.printPerson(createdPerson, type));
+        str = Print.printPerson(createdPerson, type);
+        System.out.println(str);
+        s.out.println(str);
         s.new_person = createdPerson.getId();
         
         // REQUEST 5
@@ -64,7 +72,9 @@ public class ClientMain {
         
         // REQUEST 6
         ActivityTypes activityTypes = s.request_06(type);
-        System.out.println(Print.printActivityTypes(activityTypes, type));
+        str = Print.printActivityTypes(activityTypes, type);
+        System.out.println(str);
+        s.out.println(str);
         s.types = activityTypes.getTypeList();
         
         // REQUEST 7
@@ -73,24 +83,34 @@ public class ClientMain {
         	String path = "/person/"+s.first_person_id+"/"+s.types.get(i).getType();
         	activities = s.single_request_07(type, path);
         }
-        System.out.println(Print.printActivities(activities, type));
+        str = Print.printActivities(activities, type);
+        System.out.println(str);
+        s.out.println(str);
         s.activity = activities.getActivityList().get(0);
         
         // REQUEST 8
-        Print.printActivity(s.request_08(type), type);
+        str = Print.printActivity(s.request_08(type), type);
+        System.out.println(str);
+        s.out.println(str);
         
         // REQUEST 9
         Activity createdActivity = s.request_09(type);
         s.newActivity = createdActivity;
-        System.out.println(Print.printActivity(createdActivity, type));
+        str = Print.printActivity(createdActivity, type);
+        System.out.println(str);
+        s.out.println(str);
         
         // REQUEST 10
         createdActivity = s.request_10(type);
-        System.out.println(Print.printActivity(createdActivity, type));
+        str = Print.printActivity(createdActivity, type);
+        System.out.println(str);
+        s.out.println(str);
         
         // REQUEST 11
         Activities filtered = s.request_11(type);
-        System.out.println(Print.printActivities(filtered, type));
+        str = Print.printActivities(filtered, type);
+        System.out.println(str);
+        s.out.println(str);
 	}
 	
 	public ClientMain() {
