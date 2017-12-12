@@ -26,8 +26,8 @@ public class ClientMain {
 		// REQUEST 1
 		People people = s.request_01(type);
 		String str = Print.printPeople(people, type);
-		System.out.println(s);
-		s.out.println(s);
+		System.out.println(str);
+		s.out.println(str);
 		// save person ids
 		s.first_person_id = people.getPersonList().get(0).getId();
 		s.last_person_id = people.getPersonList().get(people.getPersonList().size()-1).getId();

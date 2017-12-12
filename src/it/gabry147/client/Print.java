@@ -27,7 +27,7 @@ public class Print {
 		mapper.configure(SerializationFeature.INDENT_OUTPUT, true);
         mapper.configure(SerializationFeature.ORDER_MAP_ENTRIES_BY_KEYS, true);
         String result = mapper.writeValueAsString(obj);
-        return result;	
+        return result+"\n";	
 	}
 	
 	private static String printXML(JAXBContext con, Object obj) throws JAXBException {	
