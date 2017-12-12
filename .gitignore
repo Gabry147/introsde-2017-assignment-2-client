@@ -1,0 +1,7 @@
+/.settings
+/bin
+/build
+/ivy
+/lib
+.classpath
+.project
