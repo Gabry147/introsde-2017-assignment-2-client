@@ -1,5 +1,6 @@
 package it.gabry147.client;
 
+import java.io.PrintWriter;
 import java.net.URI;
 import java.util.Date;
 import java.util.List;
@@ -26,6 +27,8 @@ public class Sender {
 	private String baseURI = "https://sde2-2017-scarton.herokuapp.com/";
 	
 	private WebTarget webtarget;
+	
+	PrintWriter out;
 	
 	//Data for requests
 	int first_person_id;
@@ -109,8 +112,11 @@ public class Sender {
     		result = "ERROR";
     		return null;
     	}
+    	out.println("Request #1: GET /person Accept: "+type);
     	System.out.println("Request #1: GET /person Accept: "+type);
-    	System.out.println(Print.printResponseStatus(result, response.getStatus()));
+    	String toWrite = Print.printResponseStatus(result, response.getStatus());
+    	out.println(toWrite);
+    	System.out.println(toWrite);
     	return p;
     }
     
@@ -124,8 +130,11 @@ public class Sender {
     	else {
     		result = "ERROR";
     	}
+    	out.println("Request #2: GET /person/"+ this.first_person_id + " Accept: "+type);
     	System.out.println("Request #2: GET /person/"+ this.first_person_id + " Accept: "+type);
-    	System.out.println(Print.printResponseStatus(result, response.getStatus()));
+    	String toWrite = Print.printResponseStatus(result, response.getStatus());
+    	System.out.println(toWrite);
+    	out.println(toWrite);
     	return p;
     }
 
@@ -140,8 +149,11 @@ public class Sender {
     	else {
     		result = "ERROR";
     	}
+    	out.println("Request #3: PUT /person/"+ this.first_person_id + " Accept: "+type+ " Content-Type: "+type);
     	System.out.println("Request #3: PUT /person/"+ this.first_person_id + " Accept: "+type+ " Content-Type: "+type);
-    	System.out.println(Print.printResponseStatus(result, response.getStatus()));
+    	String toWrite = Print.printResponseStatus(result, response.getStatus());
+    	System.out.println(toWrite);
+    	out.println(toWrite);
     	return p;
     }
     
@@ -157,8 +169,11 @@ public class Sender {
     	else {
     		result = "ERROR";
     	}
+    	out.println("Request #4: POST /person Accept: "+type+ " Content-Type: "+type);
     	System.out.println("Request #4: POST /person Accept: "+type+ " Content-Type: "+type);
-    	System.out.println(Print.printResponseStatus(result, response.getStatus()));
+    	String toWrite = Print.printResponseStatus(result, response.getStatus());
+    	System.out.println(toWrite);
+    	out.println(toWrite);
     	return p;
     }
     
@@ -172,8 +187,11 @@ public class Sender {
     	else {
     		result = "ERROR";
     	}
+    	out.println("Request #5: DELETE /person/"+this.new_person +" Accept: "+type+ " Content-Type: "+type);
     	System.out.println("Request #5: DELETE /person/"+this.new_person +" Accept: "+type+ " Content-Type: "+type);
-    	System.out.println(Print.printResponseStatus(result, response.getStatus()));
+    	String toWrite = Print.printResponseStatus(result, response.getStatus());
+    	System.out.println(toWrite);
+    	out.println(toWrite);
     }
     
     public ActivityTypes request_06(String type) {
@@ -187,8 +205,11 @@ public class Sender {
     	else {
     		result = "ERROR";
     	}
+    	out.println("Request #6: GET /activity_types Accept: "+type);
     	System.out.println("Request #6: GET /activity_types Accept: "+type);
-    	System.out.println(Print.printResponseStatus(result, response.getStatus()));
+    	String toWrite = Print.printResponseStatus(result, response.getStatus());
+    	System.out.println(toWrite);
+    	out.println(toWrite);
     	return at;
     }
     
@@ -204,8 +225,11 @@ public class Sender {
     	}
     	if( asl.size() >= 1) {
     		result = "OK";
+    		out.println("Request #7: GET "+path+" Accept: "+type);
     		System.out.println("Request #7: GET "+path+" Accept: "+type);
-        	System.out.println(Print.printResponseStatus(result, response.getStatus()));
+        	String toWrite = Print.printResponseStatus(result, response.getStatus());
+        	System.out.println(toWrite);
+        	out.println(toWrite);
         	return as;
     	}
     	else {
@@ -226,8 +250,11 @@ public class Sender {
     	else {
     		result = "ERROR";
     	}
+    	out.println("Request #8: GET /person/"+this.first_person_id+"/"+activity.getType().getType()+"/"+activity.getId() + " Accept: "+type);
     	System.out.println("Request #8: GET /person/"+this.first_person_id+"/"+activity.getType().getType()+"/"+activity.getId() + " Accept: "+type);
-    	System.out.println(Print.printResponseStatus(result, response.getStatus()));
+    	String toWrite = Print.printResponseStatus(result, response.getStatus());
+    	System.out.println(toWrite);
+    	out.println(toWrite);
     	return a;
     }
     
@@ -262,8 +289,11 @@ public class Sender {
     	else {
     		result = "ERROR";
     	}
+    	out.println("Request #9: POST /person/"+this.first_person_id+"/"+this.types.get(0).getType()+" Accept: "+type+ " Content-Type: "+type);
 		System.out.println("Request #9: POST /person/"+this.first_person_id+"/"+this.types.get(0).getType()+" Accept: "+type+ " Content-Type: "+type);
-    	System.out.println(Print.printResponseStatus(result, response.getStatus()));
+    	String toWrite = Print.printResponseStatus(result, response.getStatus());
+    	System.out.println(toWrite);
+    	out.println(toWrite);
     	return persisted;
     }
     
@@ -280,8 +310,11 @@ public class Sender {
     	else {
     		result = "ERROR";
     	}
+    	out.println("Request #10: PUT /person/"+this.first_person_id+"/"+this.types.get(1).getType()+"/"+newActivity.getId() + " Accept: "+type);
     	System.out.println("Request #10: PUT /person/"+this.first_person_id+"/"+this.types.get(1).getType()+"/"+newActivity.getId() + " Accept: "+type);
-    	System.out.println(Print.printResponseStatus(result, response.getStatus()));
+    	String toWrite = Print.printResponseStatus(result, response.getStatus());
+    	System.out.println(toWrite);
+    	out.println(toWrite);
     	return a;
     }
     
@@ -301,8 +334,11 @@ public class Sender {
     	else {
     		result = "ERROR";
     	}
+    	out.println("Request #11: GET /person/"+this.first_person_id+"/"+this.types.get(1).getType() +" Accept: "+type);
     	System.out.println("Request #11: GET /person/"+this.first_person_id+"/"+this.types.get(1).getType() +" Accept: "+type);
-    	System.out.println(Print.printResponseStatus(result, response.getStatus()));
+    	String toWrite = Print.printResponseStatus(result, response.getStatus());
+    	System.out.println(toWrite);
+    	out.println(toWrite);
     	return as;
     }
 }

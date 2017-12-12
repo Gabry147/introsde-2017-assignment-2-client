@@ -1,6 +1,7 @@
 package it.gabry147.client;
 
 import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -108,6 +109,7 @@ public class ClientMain {
 				return;
 			}
 		}
+		cm.s.out = new PrintWriter("client-json-log.txt");
 		cm.executeRequest(MediaType.APPLICATION_JSON);
 		System.out.println("\n\n");
 		//reset data
@@ -117,7 +119,11 @@ public class ClientMain {
 		cm.s.activity = null;
 		cm.s.newActivity = null;
 		cm.s.types = null;
+		cm.s.out.close();
+		cm.s.out = new PrintWriter("client-xml-log.txt");
 		cm.executeRequest(MediaType.APPLICATION_XML);
+		cm.s.out.close();
+		
 	}
 
 }
